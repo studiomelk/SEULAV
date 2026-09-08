@@ -4,6 +4,10 @@
     {
       "source": "/app",
       "destination": "/api/app"
+    },
+    {
+      "source": "/ajuda",
+      "destination": "/ajuda/index.html"
     }
   ]
 }
