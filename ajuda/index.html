@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0752b8">
+<title>Ajuda SeuLav — Bom Retiro</title>
+<meta name="description" content="Tire suas dúvidas sobre lavar e secar roupas na SeuLav Bom Retiro.">
+<link rel="icon" href="../favicon-seulav.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,700;6..12,800;6..12,900&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0752b8;--deep:#062b68;--sky:#eef7ff;--ink:#17365d;--muted:#637b98;--line:#dce8f5;--green:#16834d;--white:#fff;--shadow:0 18px 50px rgba(6,43,104,.12)}
+*{box-sizing:border-box}body{margin:0;background:#f6faff;color:var(--ink);font-family:Manrope,Arial,sans-serif}.wrap{width:min(100% - 32px,980px);margin:auto}header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:16px}.logo{width:120px}.back{font-weight:800;color:var(--blue);font-size:14px}.hero{padding:46px 0 24px}.kicker{text-transform:uppercase;letter-spacing:.12em;font-weight:900;font-size:12px;color:var(--blue);margin:0 0 8px}.hero h1{font:900 clamp(38px,7vw,58px)/1 'Nunito Sans';letter-spacing:-.045em;color:var(--deep);margin:0 0 14px}.hero p{margin:0;max-width:700px;color:var(--muted);font-size:17px}.unit{margin-top:18px;display:flex;gap:10px;align-items:flex-start;color:#456786;font-size:14px}.unit strong{color:var(--deep)}.grid{display:grid;grid-template-columns:1fr;gap:18px;padding:18px 0 60px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}.search{padding:16px}.search input{width:100%;height:54px;border:1px solid #cbdced;border-radius:12px;padding:0 16px;font:600 15px Manrope;color:var(--ink);outline:none}.search input:focus{border-color:#75b8f5;box-shadow:0 0 0 4px rgba(7,82,184,.08)}.cats{display:flex;gap:9px;overflow:auto;padding:0 16px 16px}.cat{flex:0 0 auto;border:1px solid #cbdced;background:#fff;color:#315077;border-radius:999px;padding:9px 13px;font-weight:800;font-size:13px;cursor:pointer}.cat.active{background:var(--blue);border-color:var(--blue);color:#fff}.faq{padding:0 18px}.faq-item{border-top:1px solid var(--line);padding:20px 0}.q{font:900 18px/1.25 'Nunito Sans';color:var(--deep);margin:0 0 8px}.a{margin:0;color:#536f8c;font-size:15px;line-height:1.65}.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:18px}.step{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fbfdff}.step b{display:block;color:var(--blue);font:900 28px 'Nunito Sans';margin-bottom:6px}.step strong{display:block;color:var(--deep);margin-bottom:5px}.step span{font-size:13px;color:var(--muted)}.ticket{padding:22px;background:linear-gradient(135deg,#fff 0%,#f0f8ff 100%)}.ticket h2{margin:0 0 8px;font:900 28px/1.1 'Nunito Sans';color:var(--deep)}.ticket p{margin:0 0 16px;color:var(--muted);font-size:14px}.form{display:grid;gap:11px}.field{height:50px;border:1px solid #cbdced;border-radius:10px;padding:0 14px;background:#fff;font:500 14px Manrope;color:var(--ink);width:100%}.textarea{height:110px;padding-top:12px;resize:vertical}.submit{height:52px;border:0;border-radius:10px;background:var(--blue);color:#fff;font:900 15px Manrope;cursor:pointer}.notice{display:none;margin-top:12px;padding:13px 14px;border-radius:10px;background:#eaf8f0;color:#12683e;font-size:14px;font-weight:700}.notice.show{display:block}.small{font-size:12px;color:#7b90a7}.footer{padding:28px 0 48px;text-align:center;color:#7890a8;font-size:12px}.empty{padding:25px 0;text-align:center;color:var(--muted)}
+@media(min-width:780px){.grid{grid-template-columns:1.2fr .8fr;align-items:start}.ticket{position:sticky;top:96px}.steps{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a href="../" aria-label="Voltar ao site"><img class="logo" src="../img6.png" alt="SeuLav"></a><a class="back" href="../">← Voltar ao site</a></div></header>
+<main class="wrap">
+<section class="hero">
+<p class="kicker">Central de ajuda</p>
+<h1>Como podemos ajudar?</h1>
+<p>Encontre respostas rápidas sobre a SeuLav. Você pode escolher uma categoria ou escrever sua dúvida do jeito que preferir.</p>
+<div class="unit"><span>📍</span><span><strong>SeuLav Bom Retiro</strong><br>R. Newton Prado, 767 — Bom Retiro, São Paulo — SP</span></div>
+</section>
+<section class="grid">
+<div class="card">
+<div class="search"><input id="search" type="search" placeholder="Digite sua dúvida... Ex.: Como faço para lavar?" autocomplete="off"></div>
+<div class="cats" id="cats"></div>
+<div class="faq" id="faq"></div>
+</div>
+<aside class="card ticket">
+<h2>Não encontrou a resposta?</h2>
+<p>Envie sua dúvida para nossa equipe. Quando não houver uma resposta segura na base, podemos registrar o atendimento para retorno em até <strong>24 horas</strong>.</p>
+<form class="form" id="ticketForm">
+<input class="field" id="name" name="name" placeholder="Seu nome" required>
+<input class="field" id="whatsapp" name="whatsapp" placeholder="WhatsApp" inputmode="tel" required>
+<input class="field" id="machine" name="machine" placeholder="Número da máquina (opcional)">
+<textarea class="field textarea" id="question" name="question" placeholder="Conte sua dúvida" required></textarea>
+<button class="submit" type="submit">Enviar dúvida para a equipe</button>
+<div class="notice" id="notice"></div>
+<span class="small">Seu protocolo será gerado no seu dispositivo nesta primeira versão.</span>
+</form>
+</aside>
+</section>
+<section class="card" style="margin-bottom:24px"><div style="padding:22px"><p class="kicker">Entenda em 2 minutos</p><h2 style="font:900 30px/1.1 'Nunito Sans';margin:0;color:var(--deep)">Lavar e secar são processos separados</h2></div><div class="steps"><div class="step"><b>01</b><strong>Escolha lavar</strong><span>Use uma máquina de lavar, siga as instruções do equipamento, realize o pagamento e inicie o processo.</span></div><div class="step"><b>02</b><strong>Finalize a lavagem</strong><span>Ao terminar, retire suas roupas da máquina.</span></div><div class="step"><b>03</b><strong>Escolha secar</strong><span>Se quiser secar na SeuLav, utilize uma secadora separadamente.</span></div><div class="step"><b>04</b><strong>Não há ciclo automático</strong><span>A lavadora não começa uma secagem automaticamente. Lavar e secar são utilizações independentes.</span></div></div></section>
+<div class="footer">SeuLav Lavanderia 24 horas · Bom Retiro, São Paulo</div>
+</main>
+<script>
+const data=[
+{c:'Como funciona',q:'Como funciona a SeuLav?',v:'A SeuLav é uma lavanderia de autosserviço. Você escolhe o serviço que deseja utilizar, seleciona a máquina correspondente, realiza o pagamento e inicia o processo seguindo as instruções. Você pode escolher lavar ou secar. Lavagem e secagem são processos separados.',t:['como funciona','primeira vez','o que faço primeiro','como usar']},
+{c:'Como funciona',q:'A lavagem e a secagem são feitas juntas?',v:'Não. Na SeuLav, lavagem e secagem são processos separados. Primeiro você utiliza uma máquina de lavar. Depois, se quiser secar suas roupas na lavanderia, utiliza uma secadora separadamente.',t:['lava e seca','junto','sequência','automaticamente','mesma máquina']},
+{c:'Como funciona',q:'Preciso lavar e secar?',v:'Não. Você pode apenas lavar, apenas secar ou fazer os dois processos separadamente. A secagem é opcional.',t:['preciso secar','só lavar','só secar','obrigatório']},
+{c:'Lavar',q:'Como faço para lavar minhas roupas?',v:'1. Escolha uma máquina de lavar. 2. Coloque as roupas respeitando a capacidade indicada. 3. Siga as instruções do equipamento. 4. Realize o pagamento. 5. Inicie o processo. 6. Aguarde o término e retire suas roupas. Se quiser secá-las, utilize uma secadora separadamente.',t:['lavar','lavagem','colocar roupa','iniciar lavagem']},
+{c:'Lavar',q:'Posso colocar qualquer quantidade de roupa?',v:'Não ultrapasse a capacidade indicada na máquina. Respeitar a capacidade ajuda a garantir o funcionamento adequado do equipamento e um bom resultado da lavagem.',t:['quantidade','capacidade','muita roupa','lotar']},
+{c:'Secar',q:'Como faço para secar minhas roupas?',v:'1. Escolha uma secadora. 2. Coloque as roupas adequadas para secagem. 3. Verifique as instruções da máquina. 4. Realize o pagamento. 5. Inicie o processo. 6. Aguarde o término e retire as roupas.',t:['secar','secagem','secadora','iniciar secagem']},
+{c:'Secar',q:'Posso usar a secadora sem lavar na SeuLav?',v:'Sim. A secagem é um processo separado. Você pode utilizar a secadora para roupas que já estejam lavadas.',t:['somente secar','só secar','sem lavar']},
+{c:'Pagamento',q:'Quanto custa lavar?',v:'O valor da lavagem deve ser consultado no sistema ou na própria máquina antes de iniciar o processo. Nesta primeira versão, o preço não foi fixado para evitar informação desatualizada.',t:['preço lavagem','quanto custa lavar','valor lavar','preço']},
+{c:'Pagamento',q:'Quanto custa secar?',v:'O valor da secagem deve ser consultado no sistema ou na própria máquina antes de iniciar o processo. Nesta primeira versão, o preço não foi fixado para evitar informação desatualizada.',t:['preço secagem','quanto custa secar','valor secar']},
+{c:'Problemas',q:'Paguei e a máquina não começou.',v:'Primeiro confirme se o pagamento foi concluído e se a máquina correta foi selecionada. Se continuar sem iniciar, informe o número da máquina e, se possível, o horário aproximado do pagamento para nossa equipe.',t:['paguei','não começou','não iniciou','pagamento']},
+{c:'Problemas',q:'A máquina parou durante o processo.',v:'Não tente forçar ou desmontar o equipamento. Informe o número da máquina e descreva o que aconteceu para que nossa equipe possa analisar.',t:['parou','travou','parou de funcionar']},
+{c:'Problemas',q:'Minha roupa ficou presa.',v:'Não force a porta e não tente desmontar a máquina. Informe o número da máquina e envie uma solicitação para nossa equipe.',t:['roupa presa','porta','travou']},
+{c:'Unidade',q:'Onde fica a SeuLav?',v:'A SeuLav Bom Retiro fica na R. Newton Prado, 767 — Bom Retiro, São Paulo — SP, CEP 01127-000.',t:['endereço','onde fica','localização','bom retiro']},
+{c:'Unidade',q:'Qual unidade estou utilizando?',v:'Você está sendo atendido pela unidade SeuLav Bom Retiro.',t:['qual unidade','onde estou']}
+];
+const cats=['Todos',...new Set(data.map(x=>x.c))];let active='Todos';
+const catsEl=document.getElementById('cats'),faq=document.getElementById('faq'),search=document.getElementById('search');
+function esc(s){return s.replace(/[&<>'"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[m]))}
+function renderCats(){catsEl.innerHTML=cats.map(c=>`<button class="cat ${c===active?'active':''}" data-c="${esc(c)}">${esc(c)}</button>`).join('');catsEl.querySelectorAll('.cat').forEach(b=>b.onclick=()=>{active=b.dataset.c;renderCats();render()})}
+function render(){const term=search.value.trim().toLowerCase();const list=data.filter(x=>(active==='Todos'||x.c===active)&&(!term||[x.q,x.v,...x.t].join(' ').toLowerCase().includes(term)));faq.innerHTML=list.length?list.map(x=>`<article class="faq-item"><h3 class="q">${esc(x.q)}</h3><p class="a">${esc(x.v).replace(/\n/g,'<br>')}</p></article>`).join(''):'<div class="empty">Não encontrei uma resposta segura para essa busca. Use o formulário ao lado para enviar sua dúvida à equipe.</div>'}
+search.addEventListener('input',render);renderCats();render();
+document.getElementById('ticketForm').addEventListener('submit',e=>{e.preventDefault();const proto='SL-'+Date.now().toString().slice(-6);const record={protocol:proto,name:document.getElementById('name').value,whatsapp:document.getElementById('whatsapp').value,machine:document.getElementById('machine').value,question:document.getElementById('question').value,unit:'001',createdAt:new Date().toISOString(),status:'PENDENTE'};const arr=JSON.parse(localStorage.getItem('seulav_tickets')||'[]');arr.push(record);localStorage.setItem('seulav_tickets',JSON.stringify(arr));const n=document.getElementById('notice');n.innerHTML=`Dúvida registrada. Protocolo <strong>${proto}</strong>. Nesta primeira versão, o registro fica salvo neste navegador; a integração de envio para a equipe será ativada na próxima etapa.`;n.classList.add('show');e.target.reset()});
+</script>
+</body>
+</html>
