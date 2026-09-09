@@ -1,142 +1,72 @@
 window.SEULAV_HELP = {
+  whatsapp: '5511940845794',
   quickQuestions: [
-    'Como faço para lavar?',
-    'Como faço para secar?',
-    'Como escolher a máquina?',
-    'Como funciona o pagamento?',
+    'Como começo uma lavagem?',
+    'Como usar a secadora?',
+    'Preciso colocar sabão?',
+    'A roupa saiu muito molhada',
     'Como acompanho o ciclo?',
-    'A máquina não iniciou'
-  ],
-  categories: [
-    { id:'guia', icon:'washer', title:'Como usar', subtitle:'Guia completo passo a passo' },
-    { id:'manuais', icon:'book', title:'Manuais de uso', subtitle:'Lavagem, secagem e ciclos' },
-    { id:'cuidados', icon:'heart', title:'Cuidados com as roupas', subtitle:'Boas práticas para suas peças' },
-    { id:'dicas', icon:'spark', title:'Dicas e boas práticas', subtitle:'Melhores resultados no dia a dia' },
-    { id:'problemas', icon:'alert', title:'Problemas e soluções', subtitle:'Respostas rápidas para imprevistos' },
-    { id:'contato', icon:'chat', title:'Fale com a gente', subtitle:'Não encontrou sua resposta?' }
-  ],
-  answers: [
-    {
-      id:'lavar',
-      keywords:['lavar','lavagem','como lavar','lavadora','usar lavadora','maquina de lavar','máquina de lavar','iniciar lavagem'],
-      title:'Como usar a lavadora',
-      short:'Escolha uma lavadora disponível, coloque as roupas, confirme a máquina, escolha o ciclo, efetue o pagamento e inicie.',
-      note:'Você não precisa adicionar sabão nem amaciante. A dosagem dos produtos é automática.',
-      steps:['Separe as roupas e confira as etiquetas','Escolha uma lavadora disponível e confira sua identificação','Coloque as roupas e feche a porta corretamente','Confirme a lavadora e o ciclo disponível','Efetue o pagamento','Inicie a lavagem','Aguarde o ciclo e acompanhe pelo aplicativo','Retire as roupas ao finalizar']
-    },
-    {
-      id:'secar',
-      keywords:['secar','secagem','secadora','como secar','usar secadora','maquina de secar','máquina de secar','roupa molhada'],
-      title:'Como usar a secadora',
-      short:'Confira se as peças podem ser secas, escolha uma secadora disponível, confirme a máquina, efetue o pagamento e inicie o ciclo.',
-      note:'Lavagem e secagem são processos separados. Sempre confira a etiqueta da peça antes de usar a secadora.',
-      steps:['Confira as etiquetas das roupas','Escolha uma secadora disponível e confira sua identificação','Coloque as roupas e feche a porta corretamente','Confirme a secadora e escolha o ciclo de secagem','Efetue o pagamento','Inicie a secagem','Aguarde o ciclo e acompanhe pelo aplicativo','Retire as roupas ao finalizar']
-    },
-    {
-      id:'maquina',
-      keywords:['escolher maquina','escolher máquina','qual maquina','qual máquina','numero da maquina','número da máquina','identificação','identificacao','lavadora disponivel','secadora disponivel'],
-      title:'Como escolher a máquina correta',
-      short:'Primeiro escolha se você vai lavar ou secar. Depois identifique uma máquina disponível e confirme o número antes do pagamento.',
-      note:'Conferir a identificação da máquina antes de pagar evita iniciar o serviço no equipamento errado.',
-      steps:['Escolha entre lavar ou secar','Veja quais máquinas estão disponíveis','Confira o número ou identificação do equipamento','Confirme a mesma máquina no aplicativo ou sistema da unidade','Só então avance para o pagamento']
-    },
-    {
-      id:'dosagem',
-      keywords:['sabao','sabão','amaciante','detergente','produto','produtos','dosagem','quanto sabao','levar sabao','colocar sabao','precisa sabão','precisa amaciante'],
-      title:'Os produtos são dosados automaticamente',
-      short:'Na SeuLav, você não precisa adicionar sabão, detergente ou amaciante manualmente.',
-      note:'A máquina faz a dosagem dos produtos automaticamente para você.',
-      steps:['Coloque as roupas','Escolha a máquina e o ciclo','Efetue o pagamento','Inicie normalmente']
-    },
-    {
-      id:'ciclo',
-      keywords:['ciclo','programa','qual programa','qual ciclo','delicadas','roupas delicadas','brancas','coloridas','pesadas'],
-      title:'Como escolher o ciclo',
-      short:'Escolha o ciclo de acordo com o tipo de tecido e o nível de cuidado indicado para suas roupas.',
-      note:'Confira sempre a etiqueta das peças. Se tiver dúvida sobre uma roupa específica, fale com a equipe antes de iniciar.',
-      steps:['Confira a etiqueta','Separe peças delicadas quando necessário','Escolha o ciclo compatível','Não sobrecarregue a máquina']
-    },
-    {
-      id:'pagamento',
-      keywords:['pagamento','pagar','pix','cartao','cartão','app','aplicativo','cobrança','cobranca','credito','crédito','como pagar'],
-      title:'Pagamento e liberação do ciclo',
-      short:'Depois de escolher e confirmar a máquina correta, efetue o pagamento pelo método disponível na sua unidade.',
-      note:'Lavagem e secagem são serviços separados. Confirme sempre a máquina selecionada antes de concluir o pagamento.',
-      steps:['Escolha entre lavar ou secar','Confirme a identificação da máquina','Escolha o ciclo quando solicitado','Efetue o pagamento','Aguarde a confirmação','Inicie o ciclo']
-    },
-    {
-      id:'acompanhar',
-      keywords:['acompanhar','acompanho','app','aplicativo','tempo','quanto falta','terminou','fim do ciclo','ciclo terminou','aguardar','esperar'],
-      title:'Acompanhe o ciclo pelo aplicativo',
-      short:'Depois de iniciar, aguarde o ciclo. Quando disponível na sua unidade, você pode acompanhar o andamento pelo aplicativo.',
-      note:'Volte à lavanderia ao final do ciclo e retire suas roupas para liberar a máquina para o próximo morador.',
-      steps:['Inicie o ciclo','Confira o andamento pelo aplicativo','Aguarde a conclusão','Retire as roupas ao finalizar','Deixe a máquina livre para o próximo uso']
-    },
-    {
-      id:'problema',
-      keywords:['problema','erro','falha','parou','não funciona','nao funciona','travou','não iniciou','nao iniciou','suporte','pagou e nao iniciou','pagou e não iniciou'],
-      title:'Problemas e soluções',
-      short:'Se algo não funcionar como esperado, não force o equipamento. Confira a porta e a confirmação do pagamento e anote a identificação da máquina.',
-      note:'Se a Central de Ajuda não resolver, envie uma mensagem para a equipe SeuLav com o número da máquina e uma descrição do que aconteceu.',
-      steps:['Confira se a porta está bem fechada','Verifique se o pagamento foi confirmado','Confira a identificação da máquina','Anote ou fotografe a mensagem exibida','Envie uma mensagem para a equipe']
-    },
-    {
-      id:'roupas',
-      keywords:['roupas','etiqueta','tecido','mancha','roupa branca','roupas brancas','delicada','delicadas','separar roupa','separar roupas'],
-      title:'Cuidados antes de iniciar',
-      short:'Separe as roupas por cor e tipo de tecido e confira as etiquetas antes de escolher lavagem ou secagem.',
-      note:'A etiqueta da peça é a melhor referência para saber se ela pode ser lavada ou seca em máquina.',
-      steps:['Separe claras, escuras e coloridas quando necessário','Confira bolsos e objetos soltos','Leia as etiquetas das peças','Evite sobrecarregar o equipamento']
-    }
+    'Tive problema no pagamento'
   ],
   guides: {
     lavar: {
-      title:'Como lavar',
-      intro:'Da escolha da lavadora ao fim do ciclo, veja a sequência completa para usar a SeuLav com tranquilidade.',
-      image:'../fundo-roupas-limpas.webp',
-      steps:[
-        {title:'Prepare suas roupas', text:'Separe por cor e tipo de tecido, confira os bolsos e leia as etiquetas das peças.', icon:'clothes'},
-        {title:'Escolha uma lavadora', text:'Veja qual lavadora está disponível e confira o número ou identificação do equipamento antes de continuar.', icon:'washer'},
-        {title:'Coloque as roupas', text:'Distribua as roupas sem exceder a capacidade indicada e feche a porta corretamente.', icon:'basket'},
-        {title:'Confirme a máquina e o ciclo', text:'No aplicativo ou sistema disponível na unidade, confirme a lavadora escolhida e selecione o ciclo adequado quando solicitado.', icon:'cycle'},
-        {title:'Efetue o pagamento', text:'Revise a máquina selecionada e conclua o pagamento pelo método disponível na sua unidade.', icon:'card'},
-        {title:'Inicie a lavagem', text:'Após a confirmação, inicie o ciclo. Você não precisa colocar sabão nem amaciante: a dosagem é automática.', icon:'play'},
-        {title:'Acompanhe o ciclo', text:'Aguarde a lavagem. Quando disponível na sua unidade, acompanhe o andamento pelo aplicativo.', icon:'phone'},
-        {title:'Retire suas roupas', text:'Ao final, retire as peças e deixe a máquina livre para o próximo morador.', icon:'check'}
+      label: 'Lavagem',
+      title: 'Guia completo de lavagem',
+      intro: 'Da escolha da lavadora até a retirada das roupas, com pagamento e acompanhamento pelo aplicativo.',
+      mascot: './lav-especialista.jpg',
+      steps: [
+        {title:'Escolha uma lavadora disponível', text:'Identifique uma lavadora livre na lavanderia. Confira o número ou QR Code da máquina para selecionar exatamente o equipamento correto no aplicativo.', icon:'washer'},
+        {title:'Separe e prepare as roupas', text:'Separe por cor e tipo de tecido e confira as etiquetas. Esvazie bolsos, feche zíperes e evite peças incompatíveis com lavagem em máquina.', icon:'shirt'},
+        {title:'Coloque as roupas sem compactar', text:'Distribua as peças soltas no cesto, respeitando a capacidade indicada. Não pressione roupas para tentar colocar mais peças.', icon:'basket'},
+        {title:'Feche a porta corretamente', text:'Feche a porta até perceber o travamento. Nunca force a porta se ela estiver bloqueada durante ou logo após um ciclo.', icon:'lock'},
+        {title:'Abra o aplicativo SeuLav', text:'No app, escaneie o QR Code ou selecione a identificação da lavadora que você escolheu. Confira o número antes de continuar.', icon:'phone'},
+        {title:'Escolha o ciclo e faça o pagamento', text:'Selecione o ciclo adequado e confirme o pagamento no aplicativo. Você não precisa adicionar sabão nem amaciante: a dosagem é automática.', icon:'card'},
+        {title:'Inicie e acompanhe pelo aplicativo', text:'Após a confirmação, inicie o ciclo. O andamento e o tempo restante podem ser acompanhados no aplicativo SeuLav.', icon:'play'},
+        {title:'Aguarde o fim e retire as roupas', text:'Aguarde o ciclo terminar e a porta ser liberada. Retire as roupas assim que possível para deixar a lavadora disponível para o próximo morador.', icon:'check'}
       ]
     },
     secar: {
-      title:'Como secar',
-      intro:'Confira as peças, escolha a secadora e acompanhe o ciclo até suas roupas estarem prontas.',
-      image:'../fundo-roupas-limpas.webp',
-      steps:[
-        {title:'Confira as etiquetas', text:'Antes de secar, confirme se cada peça pode ir à secadora e se exige algum cuidado especial.', icon:'tag'},
-        {title:'Escolha uma secadora', text:'Veja qual secadora está disponível e confira o número ou identificação do equipamento.', icon:'dryer'},
-        {title:'Coloque as roupas', text:'Coloque somente as peças adequadas, sem excesso, e feche a porta corretamente.', icon:'basket'},
-        {title:'Confirme a máquina e o ciclo', text:'No aplicativo ou sistema disponível na unidade, confirme a secadora e escolha o ciclo de secagem quando solicitado.', icon:'cycle'},
-        {title:'Efetue o pagamento', text:'Revise a secadora selecionada e conclua o pagamento.', icon:'card'},
-        {title:'Inicie a secagem', text:'Após a confirmação, inicie o ciclo de secagem.', icon:'play'},
-        {title:'Acompanhe o ciclo', text:'Aguarde a secagem e, quando disponível, acompanhe o andamento pelo aplicativo.', icon:'phone'},
-        {title:'Retire suas roupas', text:'Retire as peças ao finalizar para liberar a secadora e reduzir amassados desnecessários.', icon:'check'}
+      label: 'Secagem',
+      title: 'Guia completo de secagem',
+      intro: 'Use a secadora com eficiência, respeitando os tecidos e acompanhando o ciclo pelo aplicativo.',
+      mascot: './lav-especialista.jpg',
+      steps: [
+        {title:'Escolha uma secadora disponível', text:'Identifique uma secadora livre e confira o número ou QR Code antes de selecionar o equipamento no aplicativo.', icon:'dryer'},
+        {title:'Limpe o filtro de fiapos', text:'Antes do ciclo, confira a tela ou filtro frontal e remova os fiapos acumulados. Um filtro limpo melhora a circulação do ar quente e a eficiência da secagem.', icon:'filter'},
+        {title:'Confira as etiquetas das peças', text:'Nem toda roupa pode ir à secadora. Verifique a etiqueta de cada peça e retire itens que não sejam adequados à secagem em máquina.', icon:'tag'},
+        {title:'Coloque as roupas soltas', text:'Distribua as roupas sem compactar e deixe espaço para circulação do ar. Como referência operacional, não ultrapasse cerca de 80% do cesto.', icon:'basket'},
+        {title:'Selecione a secadora no aplicativo', text:'Escaneie o QR Code ou confirme a identificação da secadora escolhida. Verifique o número do equipamento antes de prosseguir.', icon:'phone'},
+        {title:'Escolha o ciclo, pague e inicie', text:'Selecione o ciclo de secagem adequado, confirme o pagamento no app e inicie. Evite ciclos mais fortes do que o necessário para o tecido.', icon:'card'},
+        {title:'Acompanhe o ciclo pelo aplicativo', text:'Você pode acompanhar o andamento e o tempo restante pelo aplicativo enquanto aguarda.', icon:'signal'},
+        {title:'Aguarde finalizar e retire as roupas', text:'Espere o ciclo e a etapa final de resfriamento terminarem. Retire as roupas após a liberação da porta.', icon:'check'}
       ]
     }
   },
   manuals: [
-    {title:'Guia completo de lavagem', subtitle:'Da escolha da lavadora ao fim do ciclo.', target:'lavar', icon:'washer'},
-    {title:'Guia completo de secagem', subtitle:'Da escolha da secadora à retirada das roupas.', target:'secar', icon:'dryer'},
-    {title:'Escolha da máquina', subtitle:'Como conferir a identificação antes de pagar.', target:'maquina', icon:'number'},
-    {title:'Programas e ciclos', subtitle:'Entenda como escolher o ciclo adequado.', target:'ciclo', icon:'cycle'},
-    {title:'Pagamento', subtitle:'Confirme a máquina e conclua o pagamento.', target:'pagamento', icon:'card'},
-    {title:'Acompanhar pelo aplicativo', subtitle:'Veja como acompanhar o andamento do ciclo.', target:'acompanhar', icon:'phone'},
-    {title:'Dosagem automática', subtitle:'Você não precisa adicionar produtos.', target:'dosagem', icon:'drop'},
-    {title:'Problemas comuns', subtitle:'O que conferir antes de solicitar atendimento.', target:'problema', icon:'alert'}
+    {title:'Primeira vez na SeuLav', text:'Entenda o fluxo completo: escolher máquina, usar o app, pagar, iniciar e acompanhar.', target:'lavar', icon:'spark'},
+    {title:'Dosagem automática', text:'A lavadora faz a dosagem dos produtos. Não adicione sabão nem amaciante.', target:'dosagem', icon:'drop'},
+    {title:'Pagamento e aplicativo', text:'Veja como identificar a máquina, confirmar o pagamento e acompanhar o ciclo.', target:'pagamento', icon:'phone'},
+    {title:'Roupa saiu muito molhada', text:'Entenda o que fazer quando a carga fica desbalanceada ao final da lavagem.', target:'encharcada', icon:'alert'},
+    {title:'Secagem mais eficiente', text:'Filtro limpo, carga solta e espaço no tambor ajudam a secar melhor.', target:'secagem', icon:'dryer'},
+    {title:'Porta travada', text:'Aguarde a liberação e nunca force a porta durante a proteção de segurança.', target:'porta', icon:'lock'}
   ],
   tips: [
-    {title:'Roupas brancas bem cuidadas', text:'Separe peças claras quando necessário e siga as orientações da etiqueta.', image:'../fundo-roupas-limpas.webp', tag:'Roupas brancas'},
-    {title:'Cuidados com roupas delicadas', text:'Leia a etiqueta e escolha o ciclo mais adequado ao tecido.', image:'../fundo-roupas-limpas.webp', tag:'Roupas delicadas'},
-    {title:'Evite sobrecarregar', text:'Deixe espaço para as roupas se movimentarem e ter um ciclo mais eficiente.', image:'../fundo-roupas-limpas.webp', tag:'Boa prática'},
-    {title:'Acompanhe pelo aplicativo', text:'Depois de iniciar, acompanhe o andamento do ciclo pelo aplicativo quando disponível.', image:'../fundo-roupas-limpas.webp', tag:'Praticidade'},
-    {title:'Retire ao terminar', text:'Retire suas peças ao final do ciclo e libere a máquina para o próximo morador.', image:'../fundo-roupas-limpas.webp', tag:'Convivência'},
-    {title:'Produtos automáticos', text:'Não adicione sabão nem amaciante: a dosagem dos produtos é automática.', image:'../fundo-roupas-limpas.webp', tag:'SeuLav'}
+    {tag:'Organização', title:'Separe as roupas antes de começar', text:'Separar por cor e tecido ajuda a preservar as peças e facilita a escolha do ciclo.'},
+    {tag:'Lavagem', title:'Não leve sabão nem amaciante', text:'A dosagem dos produtos é automática. É mais simples e evita excesso de produto.'},
+    {tag:'Secagem', title:'Filtro limpo faz diferença', text:'Retire os fiapos antes da secagem para melhorar o fluxo de ar e o rendimento do ciclo.'},
+    {tag:'Aplicativo', title:'Confira o número da máquina', text:'Antes de pagar, confirme se a lavadora ou secadora selecionada no app é a que você escolheu.'},
+    {tag:'Praticidade', title:'Acompanhe o tempo no celular', text:'Depois de iniciar, consulte o aplicativo para acompanhar o andamento e se organizar para voltar.'},
+    {tag:'Convivência', title:'Retire as roupas ao finalizar', text:'Isso libera o equipamento para o próximo morador e mantém a lavanderia organizada.'}
+  ],
+  answers: [
+    {id:'lavar', keywords:['lavar','lavagem','começar lavagem','iniciar lavagem','como lavar','primeira lavagem'], title:'Como começar uma lavagem', diagnosis:'Você pode fazer todo o processo em poucos passos pelo aplicativo SeuLav.', steps:['Escolha uma lavadora disponível e coloque as roupas.','No app, identifique a máquina, escolha o ciclo e faça o pagamento.','Inicie e acompanhe o tempo restante pelo aplicativo.'], safety:'Não adicione sabão nem amaciante: a dosagem é automática.', guide:'lavar'},
+    {id:'secar', keywords:['secar','secagem','secadora','como secar','usar secadora'], title:'Como usar a secadora', diagnosis:'O ponto principal é usar a secadora correta, manter o filtro limpo e não sobrecarregar.', steps:['Escolha a secadora e limpe o filtro de fiapos.','Coloque as roupas soltas, selecione a secadora no app e faça o pagamento.','Inicie e acompanhe o ciclo pelo aplicativo.'], safety:'Confira as etiquetas: nem toda peça pode ir à secadora.', guide:'secar'},
+    {id:'dosagem', keywords:['sabao','sabão','amaciante','detergente','produto','produtos','dosagem','levar sabão','colocar sabão','quanto sabão'], title:'Você não precisa colocar produtos', diagnosis:'A SeuLav utiliza dosagem automática dos produtos de lavagem.', steps:['Coloque as roupas normalmente.','Escolha o ciclo e faça o pagamento pelo app.','Inicie a lavagem sem adicionar sabão nem amaciante.'], safety:'Não coloque produtos próprios na máquina.'},
+    {id:'encharcada', keywords:['encharcada','muito molhada','roupa molhada','não centrifugou','nao centrifugou','desbalanceou','desbalanceada'], title:'Roupa saiu muito molhada', diagnosis:'A proteção contra desbalanceamento pode reduzir a centrifugação quando o peso fica concentrado em um lado do tambor.', steps:['Aguarde a porta destravar e abra normalmente.','Redistribua as roupas de forma uniforme no cesto.','No app, selecione apenas a centrifugação quando essa opção estiver disponível.'], safety:'Nunca force a porta travada.'},
+    {id:'porta', keywords:['porta travada','porta não abre','porta nao abre','não destrava','nao destrava','travou porta'], title:'A porta não abre', diagnosis:'A porta pode permanecer bloqueada enquanto a máquina conclui uma etapa de segurança.', steps:['Aguarde alguns minutos após o fim do ciclo.','Confira no aplicativo se o ciclo realmente terminou.','Se continuar travada, anote o número da máquina e chame o suporte.'], safety:'Não puxe nem force a porta.'},
+    {id:'secagem', keywords:['não seca','nao seca','secagem fraca','demora secar','não aquece','nao aquece','filtro','fiapos'], title:'A secagem não está rendendo como esperado', diagnosis:'Filtro com fiapos ou excesso de roupa pode reduzir bastante a circulação de ar.', steps:['Limpe o filtro frontal de fiapos.','Deixe as roupas soltas e reduza a carga se o tambor estiver muito cheio.','Escolha o ciclo adequado e reinicie pelo app se necessário.'], safety:'Respeite as etiquetas das peças e não ultrapasse a capacidade recomendada.', guide:'secar'},
+    {id:'pagamento', keywords:['pagamento','pagar','pix','cartao','cartão','app','aplicativo','qr code','qrcode','cobrança','credito','crédito'], title:'Pagamento e ativação pelo aplicativo', diagnosis:'A ativação e o pagamento são feitos pelo aplicativo SeuLav na máquina escolhida.', steps:['Confira o número ou QR Code do equipamento.','Selecione a lavadora ou secadora correta no aplicativo.','Escolha o ciclo, confirme o pagamento e acompanhe a liberação.'], safety:'Antes de pagar, confirme se o número da máquina no app corresponde ao equipamento que você escolheu.'},
+    {id:'acompanhar', keywords:['acompanhar','tempo restante','quanto falta','ciclo no app','ver ciclo','notificação','notificacao'], title:'Acompanhe o ciclo pelo aplicativo', diagnosis:'Depois de iniciar, o aplicativo ajuda você a acompanhar o andamento sem precisar ficar ao lado da máquina.', steps:['Abra o aplicativo SeuLav.','Acesse o ciclo que está em andamento.','Confira o tempo restante e volte próximo ao horário de conclusão.'], safety:'Retire as roupas assim que possível após a finalização.'},
+    {id:'maquina', keywords:['escolher maquina','escolher máquina','qual maquina','qual máquina','lavadora ou secadora','numero da maquina','número da máquina'], title:'Como escolher a máquina correta', diagnosis:'Primeiro escolha fisicamente uma máquina disponível e depois confirme a mesma identificação no aplicativo.', steps:['Veja se você precisa lavar ou secar e escolha o equipamento livre correspondente.','Confira o número ou QR Code da máquina.','No aplicativo, confirme exatamente essa identificação antes do pagamento.'], safety:'Evite iniciar ou pagar por uma máquina diferente da que você escolheu.'}
   ]
 };
