@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SeuLav Leads</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <style>
+    :root {
+      --blue: #0066cc;
+      --blue-2: #2a9dff;
+      --blue-dark: #064b8f;
+      --bg: #f4f8fc;
+      --card: #ffffff;
+      --text: #102033;
+      --muted: #64748b;
+      --line: #dbe7f3;
+      --danger: #dc2626;
+      --success: #16a34a;
+      --warning: #d97706;
+      --shadow: 0 20px 55px rgba(0, 72, 140, .10);
+      font-family: Inter, Montserrat, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(42, 157, 255, .22), transparent 32rem),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 55%, #eef6ff 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 28px 20px 18px;
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(219,231,243,.85);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      color: #fff;
+      font-size: 24px;
+      box-shadow: 0 10px 30px rgba(0,102,204,.28);
+    }
+
+    h1 { margin: 0; font-size: clamp(24px, 3vw, 34px); letter-spacing: -0.04em; }
+    .subtitle { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: #eaf5ff;
+      color: var(--blue-dark);
+      font-weight: 700;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    main { padding: 26px 0 42px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .card {
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(219,231,243,.9);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    .card h2 {
+      margin: 0 0 14px;
+      font-size: 19px;
+      letter-spacing: -.02em;
+    }
+
+    label {
+      display: block;
+      font-weight: 750;
+      font-size: 13px;
+      color: #21364f;
+      margin: 14px 0 7px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 12px 13px;
+      font: inherit;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: .18s ease;
+    }
+
+    textarea { min-height: 86px; resize: vertical; }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--blue-2);
+      box-shadow: 0 0 0 4px rgba(42,157,255,.15);
+    }
+
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    button, .button {
+      appearance: none;
+      border: 0;
+      border-radius: 15px;
+      padding: 12px 15px;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      background: #edf5ff;
+      color: var(--blue-dark);
+      transition: .18s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    button:hover, .button:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0,72,140,.10); }
+    .primary { background: linear-gradient(135deg, var(--blue), var(--blue-2)); color: #fff; }
+    .danger { background: #fee2e2; color: var(--danger); }
+    .success { background: #dcfce7; color: var(--success); }
+    .warning { background: #fff7ed; color: var(--warning); }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 13px;
+      background: #fff;
+    }
+
+    .stat strong { display: block; font-size: 24px; color: var(--blue-dark); }
+    .stat span { color: var(--muted); font-size: 12px; font-weight: 700; }
+
+    .filters {
+      display: grid;
+      grid-template-columns: 1.3fr .9fr .9fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 900px;
+    }
+
+    th, td {
+      padding: 12px 13px;
+      border-bottom: 1px solid #edf3f9;
+      text-align: left;
+      vertical-align: top;
+      font-size: 13px;
+    }
+
+    th {
+      background: #f7fbff;
+      color: #34506d;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    tr:hover td { background: #fbfdff; }
+
+    .tag {
+      display: inline-flex;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: #eef6ff;
+      color: var(--blue-dark);
+      font-weight: 800;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .muted { color: var(--muted); }
+    .small { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    .empty {
+      padding: 26px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .mini-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .mini-actions button { padding: 8px 10px; border-radius: 11px; font-size: 12px; }
+
+    .notice {
+      margin-top: 14px;
+      padding: 13px 14px;
+      border-radius: 18px;
+      background: #eff6ff;
+      border: 1px solid #cfe7ff;
+      color: #16426e;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    input[type="file"] { padding: 10px; }
+
+    @media (max-width: 920px) {
+      .grid { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .filters { grid-template-columns: 1fr; }
+      header { position: static; }
+      .topbar { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <div class="brand">
+        <div class="logo">🧺</div>
+        <div>
+          <h1>SeuLav Leads</h1>
+          <p class="subtitle">Cadastro inicial de contatos do sorteio e campanhas da SeuLav.</p>
+        </div>
+      </div>
+      <span class="pill">Campanha padrão: Sorteio SeuLav</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="grid">
+      <aside class="card">
+        <h2>Criar lead</h2>
+        <form id="leadForm">
+          <div class="row">
+            <div>
+              <label for="brand">Marca</label>
+              <select id="brand" name="brand">
+                <option value="SeuLav">SeuLav</option>
+                <option value="Studio Melk">Studio Melk</option>
+              </select>
+            </div>
+            <div>
+              <label for="campaign">Campanha</label>
+              <input id="campaign" name="campaign" value="Sorteio SeuLav" />
+            </div>
+          </div>
+
+          <label for="name">Nome / Nome WhatsApp</label>
+          <input id="name" name="name" placeholder="Ex.: Ana Paula" autocomplete="name" />
+
+          <div class="row">
+            <div>
+              <label for="phone">Telefone / WhatsApp</label>
+              <input id="phone" name="phone" placeholder="Ex.: 11999999999" inputmode="tel" autocomplete="tel" required />
+            </div>
+            <div>
+              <label for="instagram">Instagram</label>
+              <input id="instagram" name="instagram" placeholder="@usuario" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="condominium">Condomínio</label>
+              <input id="condominium" name="condominium" placeholder="Opcional" />
+            </div>
+            <div>
+              <label for="status">Status</label>
+              <select id="status" name="status">
+                <option value="novo">Novo</option>
+                <option value="whatsapp_recebido">WhatsApp recebido</option>
+                <option value="comentou_instagram">Comentou Instagram</option>
+                <option value="confirmado">Confirmado</option>
+                <option value="ganhador">Ganhador</option>
+                <option value="voucher_enviado">Voucher enviado</option>
+                <option value="nao_aprovado">Não aprovado</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="source">Origem</label>
+          <input id="source" name="source" value="seulav.com.br/sorteio" />
+
+          <label for="message">Mensagem recebida</label>
+          <textarea id="message" name="message">OLA! SEJA BEM-VINDO A SEULAV! Quero participar do sorteio.</textarea>
+
+          <label for="notes">Observações</label>
+          <textarea id="notes" name="notes" placeholder="Ex.: morador confirmado, apartamento, retirada do voucher..."></textarea>
+
+          <div class="actions">
+            <button class="primary" type="submit">+ Salvar lead</button>
+            <button type="button" id="resetForm">Limpar</button>
+          </div>
+        </form>
+
+        <div class="notice">
+          Esta primeira versão salva os dados neste navegador. Use exportar CSV/JSON para backup. A próxima etapa é ligar este mesmo painel a um banco/API para salvar automático pelo WhatsApp.
+        </div>
+      </aside>
+
+      <section class="card">
+        <div class="stats">
+          <div class="stat"><strong id="totalLeads">0</strong><span>Total de leads</span></div>
+          <div class="stat"><strong id="todayLeads">0</strong><span>Entraram hoje</span></div>
+          <div class="stat"><strong id="withPhone">0</strong><span>Com telefone</span></div>
+          <div class="stat"><strong id="withInstagram">0</strong><span>Com Instagram</span></div>
+        </div>
+
+        <div class="filters">
+          <input id="search" placeholder="Buscar por nome, telefone, Instagram ou condomínio" />
+          <select id="statusFilter">
+            <option value="">Todos os status</option>
+            <option value="novo">Novo</option>
+            <option value="whatsapp_recebido">WhatsApp recebido</option>
+            <option value="comentou_instagram">Comentou Instagram</option>
+            <option value="confirmado">Confirmado</option>
+            <option value="ganhador">Ganhador</option>
+            <option value="voucher_enviado">Voucher enviado</option>
+            <option value="nao_aprovado">Não aprovado</option>
+          </select>
+          <select id="brandFilter">
+            <option value="">Todas as marcas</option>
+            <option value="SeuLav">SeuLav</option>
+            <option value="Studio Melk">Studio Melk</option>
+          </select>
+        </div>
+
+        <div class="actions" style="margin-bottom: 14px;">
+          <button class="success" id="exportCsv" type="button">Exportar CSV</button>
+          <button id="exportJson" type="button">Backup JSON</button>
+          <button id="copyPhones" type="button">Copiar telefones</button>
+          <button class="warning" id="copyWhatsList" type="button">Copiar lista WhatsApp</button>
+          <label class="button" for="importFile">Importar CSV/JSON</label>
+          <input id="importFile" type="file" accept=".csv,.json" hidden />
+          <button class="danger" id="clearAll" type="button">Apagar tudo</button>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Instagram</th>
+                <th>Campanha</th>
+                <th>Origem</th>
+                <th>Status</th>
+                <th>Condomínio</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="leadRows"></tbody>
+          </table>
+          <div id="emptyState" class="empty">Nenhum lead cadastrado ainda.</div>
+        </div>
+
+        <p class="small">Dica: para importar no WhatsApp/agenda depois, use o CSV e mantenha o telefone com DDD. Telefones duplicados na mesma campanha são atualizados em vez de duplicados.</p>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'seulav_leads_v1';
+
+    const form = document.getElementById('leadForm');
+    const leadRows = document.getElementById('leadRows');
+    const emptyState = document.getElementById('emptyState');
+    const search = document.getElementById('search');
+    const statusFilter = document.getElementById('statusFilter');
+    const brandFilter = document.getElementById('brandFilter');
+
+    function loadLeads() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); }
+      catch { return []; }
+    }
+
+    function saveLeads(leads) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(leads));
+      render();
+    }
+
+    function normalizePhone(phone) {
+      const digits = String(phone || '').replace(/\D/g, '');
+      if (!digits) return '';
+      if (digits.startsWith('55')) return digits;
+      return digits.length >= 10 ? '55' + digits : digits;
+    }
+
+    function formatPhone(phone) {
+      const d = String(phone || '').replace(/\D/g, '');
+      if (d.length === 13 && d.startsWith('55')) return `+${d.slice(0,2)} (${d.slice(2,4)}) ${d.slice(4,9)}-${d.slice(9)}`;
+      if (d.length === 12 && d.startsWith('55')) return `+${d.slice(0,2)} (${d.slice(2,4)}) ${d.slice(4,8)}-${d.slice(8)}`;
+      return phone || '-';
+    }
+
+    function brDate(iso) {
+      if (!iso) return '-';
+      return new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(iso));
+    }
+
+    function statusLabel(status) {
+      const labels = {
+        novo: 'Novo',
+        whatsapp_recebido: 'WhatsApp recebido',
+        comentou_instagram: 'Comentou Instagram',
+        confirmado: 'Confirmado',
+        ganhador: 'Ganhador',
+        voucher_enviado: 'Voucher enviado',
+        nao_aprovado: 'Não aprovado'
+      };
+      return labels[status] || status || 'Novo';
+    }
+
+    function getFilteredLeads() {
+      const term = search.value.trim().toLowerCase();
+      const status = statusFilter.value;
+      const brand = brandFilter.value;
+      return loadLeads().filter(lead => {
+        const haystack = [lead.name, lead.phone, lead.instagram, lead.condominium, lead.campaign, lead.source, lead.message, lead.notes].join(' ').toLowerCase();
+        return (!term || haystack.includes(term)) && (!status || lead.status === status) && (!brand || lead.brand === brand);
+      }).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    }
+
+    function renderStats(leads) {
+      const today = new Date().toLocaleDateString('pt-BR');
+      document.getElementById('totalLeads').textContent = leads.length;
+      document.getElementById('todayLeads').textContent = leads.filter(l => new Date(l.createdAt).toLocaleDateString('pt-BR') === today).length;
+      document.getElementById('withPhone').textContent = leads.filter(l => l.phone).length;
+      document.getElementById('withInstagram').textContent = leads.filter(l => l.instagram).length;
+    }
+
+    function render() {
+      const all = loadLeads();
+      const leads = getFilteredLeads();
+      renderStats(all);
+      leadRows.innerHTML = '';
+      emptyState.style.display = leads.length ? 'none' : 'block';
+
+      leads.forEach(lead => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${brDate(lead.createdAt)}</td>
+          <td><strong>${escapeHtml(lead.name || '-')}</strong><div class="muted">${escapeHtml(lead.notes || '')}</div></td>
+          <td>${escapeHtml(formatPhone(lead.phone))}</td>
+          <td>${lead.instagram ? escapeHtml(lead.instagram) : '<span class="muted">-</span>'}</td>
+          <td>${escapeHtml(lead.campaign || '-')}</td>
+          <td>${escapeHtml(lead.source || '-')}</td>
+          <td><span class="tag">${escapeHtml(statusLabel(lead.status))}</span></td>
+          <td>${escapeHtml(lead.condominium || '-')}</td>
+          <td>
+            <div class="mini-actions">
+              <button type="button" onclick="editLead('${lead.id}')">Editar</button>
+              <button type="button" onclick="markWinner('${lead.id}')">Ganhador</button>
+              <button type="button" onclick="deleteLead('${lead.id}')" class="danger">Excluir</button>
+            </div>
+          </td>`;
+        leadRows.appendChild(tr);
+      });
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? '').replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+    }
+
+    function collectForm() {
+      const fd = new FormData(form);
+      const now = new Date().toISOString();
+      const phone = normalizePhone(fd.get('phone'));
+      return {
+        id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now()),
+        brand: fd.get('brand') || 'SeuLav',
+        campaign: fd.get('campaign') || 'Sorteio SeuLav',
+        name: String(fd.get('name') || '').trim(),
+        phone,
+        instagram: String(fd.get('instagram') || '').trim().replace(/^([^@].*)$/, '@$1'),
+        condominium: String(fd.get('condominium') || '').trim(),
+        status: fd.get('status') || 'novo',
+        source: fd.get('source') || 'seulav.com.br/sorteio',
+        message: String(fd.get('message') || '').trim(),
+        notes: String(fd.get('notes') || '').trim(),
+        createdAt: now,
+        updatedAt: now
+      };
+    }
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const lead = collectForm();
+      if (!lead.phone) {
+        alert('Informe o telefone do lead.');
+        return;
+      }
+
+      const leads = loadLeads();
+      const existingIndex = leads.findIndex(item => item.phone === lead.phone && item.campaign === lead.campaign);
+      if (existingIndex >= 0) {
+        leads[existingIndex] = { ...leads[existingIndex], ...lead, id: leads[existingIndex].id, createdAt: leads[existingIndex].createdAt, updatedAt: new Date().toISOString() };
+      } else {
+        leads.push(lead);
+      }
+
+      saveLeads(leads);
+      form.reset();
+      document.getElementById('brand').value = 'SeuLav';
+      document.getElementById('campaign').value = 'Sorteio SeuLav';
+      document.getElementById('source').value = 'seulav.com.br/sorteio';
+      document.getElementById('status').value = 'novo';
+      document.getElementById('message').value = 'OLA! SEJA BEM-VINDO A SEULAV! Quero participar do sorteio.';
+    });
+
+    document.getElementById('resetForm').addEventListener('click', () => form.reset());
+    search.addEventListener('input', render);
+    statusFilter.addEventListener('change', render);
+    brandFilter.addEventListener('change', render);
+
+    window.editLead = function(id) {
+      const lead = loadLeads().find(item => item.id === id);
+      if (!lead) return;
+      for (const key of ['brand','campaign','name','phone','instagram','condominium','status','source','message','notes']) {
+        const field = document.getElementById(key);
+        if (field) field.value = lead[key] || '';
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.markWinner = function(id) {
+      const leads = loadLeads().map(lead => lead.id === id ? { ...lead, status: 'ganhador', updatedAt: new Date().toISOString() } : lead);
+      saveLeads(leads);
+    };
+
+    window.deleteLead = function(id) {
+      if (!confirm('Excluir este lead?')) return;
+      saveLeads(loadLeads().filter(lead => lead.id !== id));
+    };
+
+    function toCsv(leads) {
+      const headers = ['Data', 'Hora', 'Marca', 'Campanha', 'Nome', 'Telefone', 'Instagram', 'Condominio', 'Origem', 'Status', 'Mensagem', 'Observacoes'];
+      const rows = leads.map(lead => {
+        const date = new Date(lead.createdAt);
+        return [
+          date.toLocaleDateString('pt-BR'),
+          date.toLocaleTimeString('pt-BR'),
+          lead.brand,
+          lead.campaign,
+          lead.name,
+          lead.phone,
+          lead.instagram,
+          lead.condominium,
+          lead.source,
+          statusLabel(lead.status),
+          lead.message,
+          lead.notes
+        ];
+      });
+      return [headers, ...rows].map(row => row.map(cell => `"${String(cell ?? '').replace(/"/g, '""')}"`).join(';')).join('\n');
+    }
+
+    function download(filename, content, type) {
+      const blob = new Blob([content], { type });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    document.getElementById('exportCsv').addEventListener('click', () => {
+      const csv = '\ufeff' + toCsv(getFilteredLeads());
+      download('seulav-leads.csv', csv, 'text/csv;charset=utf-8');
+    });
+
+    document.getElementById('exportJson').addEventListener('click', () => {
+      download('seulav-leads-backup.json', JSON.stringify(loadLeads(), null, 2), 'application/json');
+    });
+
+    document.getElementById('copyPhones').addEventListener('click', async () => {
+      const phones = getFilteredLeads().map(l => l.phone).filter(Boolean).join('\n');
+      await navigator.clipboard.writeText(phones);
+      alert('Telefones copiados.');
+    });
+
+    document.getElementById('copyWhatsList').addEventListener('click', async () => {
+      const text = getFilteredLeads().map(l => `${l.name || 'Sem nome'} - ${formatPhone(l.phone)}${l.instagram ? ' - ' + l.instagram : ''}`).join('\n');
+      await navigator.clipboard.writeText(text);
+      alert('Lista copiada.');
+    });
+
+    document.getElementById('clearAll').addEventListener('click', () => {
+      if (!confirm('Apagar todos os leads salvos neste navegador?')) return;
+      saveLeads([]);
+    });
+
+    document.getElementById('importFile').addEventListener('change', event => {
+      const file = event.target.files?.[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          let imported = [];
+          if (file.name.endsWith('.json')) {
+            imported = JSON.parse(reader.result);
+          } else {
+            imported = parseCsv(String(reader.result || ''));
+          }
+          const merged = mergeLeads(loadLeads(), imported);
+          saveLeads(merged);
+          alert('Importação concluída.');
+        } catch (error) {
+          alert('Não foi possível importar este arquivo.');
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    function parseCsv(text) {
+      const lines = text.replace(/^\ufeff/, '').split(/\r?\n/).filter(Boolean);
+      const [headerLine, ...dataLines] = lines;
+      if (!headerLine) return [];
+      const headers = headerLine.split(';').map(h => h.replace(/^"|"$/g, '').trim().toLowerCase());
+      return dataLines.map(line => {
+        const cells = line.match(/("([^"]|"")*"|[^;]*)/g).filter((_, i) => i % 2 === 0).map(c => c.replace(/^"|"$/g, '').replace(/""/g, '"'));
+        const obj = {};
+        headers.forEach((h, i) => obj[h] = cells[i] || '');
+        const now = new Date().toISOString();
+        return {
+          id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now() + Math.random()),
+          brand: obj.marca || 'SeuLav',
+          campaign: obj.campanha || 'Sorteio SeuLav',
+          name: obj.nome || '',
+          phone: normalizePhone(obj.telefone || obj.whatsapp || ''),
+          instagram: obj.instagram || '',
+          condominium: obj.condominio || obj['condomínio'] || '',
+          source: obj.origem || 'importado',
+          status: 'novo',
+          message: obj.mensagem || '',
+          notes: obj.observacoes || obj['observações'] || '',
+          createdAt: now,
+          updatedAt: now
+        };
+      }).filter(l => l.phone);
+    }
+
+    function mergeLeads(current, imported) {
+      const map = new Map(current.map(lead => [`${lead.phone}|${lead.campaign}`, lead]));
+      imported.forEach(lead => {
+        const key = `${lead.phone}|${lead.campaign}`;
+        map.set(key, { ...(map.get(key) || {}), ...lead, id: map.get(key)?.id || lead.id, createdAt: map.get(key)?.createdAt || lead.createdAt, updatedAt: new Date().toISOString() });
+      });
+      return Array.from(map.values());
+    }
+
+    render();
+  </script>
+</body>
+</html>
