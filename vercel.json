@@ -9,6 +9,10 @@
   ],
   "rewrites": [
     {
+      "source": "/admin/leads",
+      "destination": "/admin/leads/index.html"
+    },
+    {
       "source": "/app",
       "destination": "/api/app"
     },
