@@ -1,5 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/sorteio",
+      "destination": "https://wa.me/5511940845794?text=Ol%C3%A1%2C%20SeuLav%21%20Quero%20receber%20as%20informa%C3%A7%C3%B5es%20sobre%20o%20sorteio%2C%20o%20regulamento%20e%20saber%20como%20participar.",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     {
       "source": "/app",
